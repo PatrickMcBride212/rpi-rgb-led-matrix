@@ -1,0 +1,4 @@
+pillow~=8.0.1
+matplotlib~=3.3.2
+pendulum~=2.1.2
+yfinance~=0.1.68
