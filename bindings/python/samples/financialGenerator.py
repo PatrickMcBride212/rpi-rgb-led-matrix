@@ -3,7 +3,6 @@ import pendulum
 import yfinance as yf
 from PIL import Image
 
-
 def get_ticker(ticker):
     stock_info = yf.Ticker(ticker).info
     # stock_info.keys() for other properties you can explore
