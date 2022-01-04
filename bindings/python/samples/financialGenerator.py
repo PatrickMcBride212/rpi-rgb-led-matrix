@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
-import pendulum
 import yfinance as yf
+import pendulum
 from PIL import Image
+
 
 def get_ticker(ticker):
     stock_info = yf.Ticker(ticker).info
