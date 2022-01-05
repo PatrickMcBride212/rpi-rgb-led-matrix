@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import yfinance as yf
+#  potential alternative to the yfinance import above, since yfinance doesn't work well on raspberry pi
+import ystockquote
 import pendulum
 from PIL import Image
 
