@@ -4,7 +4,7 @@ import pendulum
 from PIL import Image
 
 
-def get_ticker(ticker):
+def get_ticker(ticker, stock_name):
     stock_info = yf.Ticker(ticker).info
     # stock_info.keys() for other properties you can explore
     market_price = stock_info['regularMarketPrice']
@@ -20,13 +20,15 @@ def get_ticker(ticker):
     dt_list = [pendulum.parse(str(dt)).float_timestamp for dt in list(price_history.index)]
     plt.style.use('dark_background')
     plt.plot(dt_list, time_series, linewidth=2)
+    plt.title(stock_name)
     plt.show()
 
 
 def main():
-    get_ticker('TSLA')
+    get_ticker('TSLA', 'Tesla')
+    get_ticker('^GSPC', 'S&P 500')  # for some reason ^GSPC is the ticker for the S&P 500 in yfinance
+    get_ticker('AMZN', 'Amazon')
 
 
 if __name__ == '__main__':
     main()
-
